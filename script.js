@@ -29,14 +29,16 @@ const lookup = {
   Z: "M",
   "?": "?",
   ",": ",",
-}; 
-
-function rot13(encodedStr) {
-  let decodedArr = []; // Your Result goes here
+};
+function isLetter(str){
+	if(str.length === 1 && str.match(/[A-Z]/i)) return true;
+	return false;
+}
+function rot13(encodedString) {
   var decodedString = "";
 
   for (var i = 0; i < encodedString.length; i++) {
-	var charCode = encodedString.charCodeAt(i);
+    var charCode = encodedString.charCodeAt(i);
 
     if (charCode >= 65 && charCode <= 90) {
       // If it's an uppercase letter (A-Z)
@@ -50,6 +52,7 @@ function rot13(encodedStr) {
 
   return decodedString;
 }
+
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
